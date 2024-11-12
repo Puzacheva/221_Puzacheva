@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -45,36 +46,53 @@ namespace _221_Puzacheva.Pages
 
         private void ButtonEnter_OnClick(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(TextBoxLogin.Text) || string.IsNullOrEmpty(PasswordBox.Password))
-            {
-                MessageBox.Show("Введите логин и пароль!");
-                return;
-            }
-
-            using (var db = new Entities())
-            {
-                var user = db.User
-                    .AsNoTracking()
-                    .FirstOrDefault(u => u.Login == TextBoxLogin.Text && u.Password == PasswordBox.Password);
-
-                if (user == null)
+                if (string.IsNullOrEmpty(TextBoxLogin.Text) || string.IsNullOrEmpty(PasswordBox.Password))
                 {
-                    MessageBox.Show("Пользователь с такими данными не найден!");
+                    MessageBox.Show("Введите логин и пароль!");
                     return;
                 }
+                
+                string hashedPassword = GetHash(PasswordBox.Password);
 
-                MessageBox.Show("Пользователь успешно найден!");
-
-                switch (user.Role)
+                using (var db = new Entities())
                 {
-                    case "Администратор":
-                        NavigationService?.Navigate(new AdminPage());
-                        break;
-                    case "Пользователь":
-                        NavigationService?.Navigate(new UserPage());
-                        break;
+
+                    var user = db.User
+                        .AsNoTracking()
+                        .FirstOrDefault(u => u.Login == TextBoxLogin.Text && u.Password == hashedPassword);
+
+                    if (user == null)
+                    {
+                        MessageBox.Show("Пользователь с такими данными не найден!");
+                        return;
+                    }
+
+                    MessageBox.Show("Пользователь успешно найден!");
+
+                    switch (user.Role)
+                    {
+                        case "Администратор":
+                            NavigationService?.Navigate(new AdminPage());
+                            break;
+                        case "Пользователь":
+                            NavigationService?.Navigate(new UserPage());
+                            break;
+                    }
                 }
             }
+            
+        public static string GetHash(string password)
+        {
+            using (var hash = SHA1.Create())
+            {
+                return string.Concat(hash.ComputeHash(Encoding.UTF8.GetBytes(password)).Select(x
+                    => x.ToString("X2")));
+            }
+        }
+
+        private void ButtonReg_OnClick(object sender, RoutedEventArgs e)
+        {
+            NavigationService?.Navigate(new RegPage());
         }
     }
 }

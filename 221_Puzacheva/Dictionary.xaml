@@ -33,8 +33,15 @@
         <Setter Property="Padding" Value="2"/>
         <Setter Property="Margin" Value="10"/>
         <Setter Property="FontFamily" Value="Georgia"/>
-        <Setter Property="FontSize" Value="12pt"/>
-        <Setter Property="Background" Value="#B5D5CA"/>
+        <Setter Property="FontSize" Value="10pt"/>
+        <Setter Property="Background" Value="White"/>
+    </Style>
+
+    <Style
+    TargetType="TextBlock">
+        <Setter Property="Padding" Value="4"/>
+        <Setter Property="FontFamily" Value="Georgia"/>
+        <Setter Property="FontSize" Value="10pt"/>
     </Style>
 
     <Style
@@ -45,6 +52,13 @@
         <Setter Property="FontFamily" Value="Georgia"/>
         <Setter Property="FontSize" Value="12pt"/>
         <Setter Property="Background" Value="#B5D5CA"/>
+    </Style>
+
+    <Style
+    TargetType="ComboBox">
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="FontFamily" Value="Georgia"/>
+        <Setter Property="Padding" Value="2"/>
     </Style>
 
 </ResourceDictionary>
