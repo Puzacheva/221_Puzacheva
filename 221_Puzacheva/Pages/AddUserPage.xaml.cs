@@ -16,25 +16,13 @@ using System.Windows.Shapes;
 namespace _221_Puzacheva.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для AdminPage.xaml
+    /// Логика взаимодействия для AddUserPage.xaml
     /// </summary>
-    public partial class AdminPage : Page
+    public partial class AddUserPage : Page
     {
-        public AdminPage()
+        public AddUserPage()
         {
             InitializeComponent();
-
-            DataGridUser.ItemsSource = Entities.GetContext().User.ToList();
-        }
-
-        private void ButtonAdd_Click(object sender, RoutedEventArgs e)
-        {
-            NavigationService?.Navigate(new AddUserPage());
-        }
-
-        private void ButtonDel_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }
