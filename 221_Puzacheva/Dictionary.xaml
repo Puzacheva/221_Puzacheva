@@ -61,4 +61,11 @@
         <Setter Property="Padding" Value="2"/>
     </Style>
 
+    <Style
+    TargetType="DataGrid">
+        <Setter Property="Height" Value="280"/>
+        <Setter Property="FontFamily" Value="Georgia"/>
+        <Setter Property="FontSize" Value="9pt"/>
+    </Style>
+
 </ResourceDictionary>

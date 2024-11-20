@@ -43,7 +43,7 @@
         <TextBox x:Name="TextBoxFIO" Grid.Column="2" Height="25" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Margin="0,142,105,0" TextChanged="TextBoxFIO_TextChanged" ToolTip="Введите ваше ФИО"/>
         <TextBlock x:Name="txtHintFIO" Foreground="Gray" Text="ФИО " IsHitTestVisible="False" Grid.Column="2" Margin="0,142,105,77" Grid.Row="1" ToolTip=""/>
 
-        <Button x:Name="ButtonCancel" Content="Отмена" Width="130" Margin="0,195,70,19"  Grid.Row="1" Grid.Column="1" ToolTip="Нажмитте, чтобы вернуться на страницу авторизации" Click="ButtonCancel_Click"/>
+        <Button x:Name="ButtonCancel" Content="Отмена" Width="130" Margin="0,195,70,19"  Grid.Row="1" Grid.Column="1" ToolTip="Нажмите, чтобы вернуться на страницу авторизации" Click="ButtonCancel_Click"/>
         <Button x:Name="ButtonReg" Content="Регистрация" Margin="0,194,105,20" Grid.Row="1" Grid.Column="2" ToolTip="Нажмите, чтобы зарегистрироваться" Click="ButtonReg_Click"/>
     </Grid>
 </Page>
