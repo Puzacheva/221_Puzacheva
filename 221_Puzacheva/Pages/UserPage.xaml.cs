@@ -23,6 +23,59 @@ namespace _221_Puzacheva.Pages
         public UserPage()
         {
             InitializeComponent();
+
+            ComboBoxSort.SelectedIndex = 0;
+            CheckBoxUser.IsChecked = false;
+
+            var currentUsers = Entities.GetContext().User.ToList();
+            ListUser.ItemsSource = currentUsers;
+
+            UpdateUsers();
+        }
+
+        private void TextBoxSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateUsers();
+        }
+
+        private void ComboBoxSort_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            UpdateUsers();
+        }
+
+        private void CheckBoxUser_Checked(object sender, RoutedEventArgs e)
+        {
+            UpdateUsers();
+        }
+
+        private void CheckBoxUser_Unchecked(object sender, RoutedEventArgs e)
+        {
+            UpdateUsers();
+        }
+
+        private void ButtonClear_Click(object sender, RoutedEventArgs e)
+        {
+            CheckBoxUser.IsChecked = false;
+            TextBoxSearch.Clear();
+            ComboBoxSort.SelectedIndex = 0;
+        }
+
+        private void UpdateUsers()
+        {
+            var currentUsers = Entities.GetContext().User.ToList();
+
+            //поиск ФИО (без учета регистра)
+            currentUsers = currentUsers.Where(x => x.FIO.ToLower().Contains(TextBoxSearch.Text.ToLower())).ToList();
+
+            //фильтр по роли
+            if (CheckBoxUser.IsChecked.Value)
+                currentUsers = currentUsers.Where(x => x.Role.Contains("Пользователь")).ToList();
+
+            //сортировка
+            if (ComboBoxSort.SelectedIndex == 0)
+                ListUser.ItemsSource = currentUsers.OrderBy(x => x.FIO).ToList();
+            else
+                ListUser.ItemsSource = currentUsers.OrderByDescending(x => x.FIO).ToList();
         }
     }
 }

@@ -8,11 +8,11 @@
 
     <Style
         TargetType="Button">
-        <Setter Property="Height" Value="30"/>
+        <Setter Property="Height" Value="35"/>
         <Setter Property="Padding" Value="2"/>
         <Setter Property="Margin" Value="10"/>
         <Setter Property="FontFamily" Value="Georgia"/>
-        <Setter Property="FontSize" Value="14pt"/>
+        <Setter Property="FontSize" Value="18pt"/>
         <Setter Property="Background" Value="#E0A9AF"/>
         <Setter Property="Foreground" Value="Black"/>
     </Style>
@@ -20,17 +20,17 @@
     <Style
         TargetType="Label">
         <Setter Property="Height" Value="30"/>
-        <Setter Property="Padding" Value="2"/>
+        <Setter Property="Padding" Value="0"/>
         <Setter Property="Margin" Value="10"/>
         <Setter Property="FontFamily" Value="Georgia"/>
-        <Setter Property="FontSize" Value="14pt"/>
+        <Setter Property="FontSize" Value="18pt"/>
         <Setter Property="Foreground" Value="Black"/>
     </Style>
 
     <Style
     TargetType="TextBox">
-        <Setter Property="Height" Value="27"/>
-        <Setter Property="Padding" Value="2"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Padding" Value="6"/>
         <Setter Property="Margin" Value="10"/>
         <Setter Property="FontFamily" Value="Georgia"/>
         <Setter Property="FontSize" Value="10pt"/>
@@ -39,15 +39,16 @@
 
     <Style
     TargetType="TextBlock">
-        <Setter Property="Padding" Value="4"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Padding" Value="8"/>
         <Setter Property="FontFamily" Value="Georgia"/>
         <Setter Property="FontSize" Value="10pt"/>
     </Style>
 
     <Style
     TargetType="PasswordBox">
-        <Setter Property="Height" Value="27"/>
-        <Setter Property="Padding" Value="2"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="Padding" Value="6"/>
         <Setter Property="Margin" Value="10"/>
         <Setter Property="FontFamily" Value="Georgia"/>
         <Setter Property="FontSize" Value="12pt"/>
@@ -56,16 +57,16 @@
 
     <Style
     TargetType="ComboBox">
-        <Setter Property="Height" Value="25"/>
+        <Setter Property="Height" Value="30"/>
         <Setter Property="FontFamily" Value="Georgia"/>
-        <Setter Property="Padding" Value="2"/>
+        <Setter Property="Padding" Value="1"/>
     </Style>
 
     <Style
     TargetType="DataGrid">
-        <Setter Property="Height" Value="280"/>
+        <Setter Property="Height" Value="390"/>
         <Setter Property="FontFamily" Value="Georgia"/>
-        <Setter Property="FontSize" Value="9pt"/>
+        <Setter Property="FontSize" Value="10pt"/>
     </Style>
 
 </ResourceDictionary>

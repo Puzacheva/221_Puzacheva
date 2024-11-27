@@ -5,45 +5,45 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:_221_Puzacheva.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="344" d:DesignWidth="600"
+      d:DesignHeight="400" d:DesignWidth="720"
       Title="Регистрация">
 
     <Grid x:Name="RegGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
             <RowDefinition></RowDefinition>
-            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="70"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="120"></ColumnDefinition>
-            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="174"></ColumnDefinition>
+            <ColumnDefinition Width="194"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Column="1" Content="Введите логин"  Margin="0,0,10,214" Grid.Row="1"/>
-        <Label Grid.Column="1" Content="Введите пароль"  Margin="0,0,10,177" Grid.Row="1" VerticalAlignment="Bottom"/>
-        <Label Grid.Column="1" Content="Подтвердите пароль"  Margin="0,0,10,142" Grid.Row="1" VerticalAlignment="Bottom"/>
-        <Label Grid.Column="1" Content="Выберите роль"  Margin="0,0,10,0" Grid.Row="1" VerticalAlignment="Center"/>
-        <Label Grid.Column="1" Content="Введите ФИО"  Margin="0,0,10,72" Grid.Row="1" VerticalAlignment="Bottom"/>
+        <Label Grid.Column="1" Content="Введите логин" Grid.Row="1" VerticalAlignment="Top" Margin="0,1,0,0" Height="30"/>
+        <Label Grid.Column="1" Content="Введите пароль"  Margin="0,40,0,190" Grid.Row="1" />
+        <Label Grid.Column="1" Content="Подтвердите пароль"  Margin="0,80,0,0" Grid.Row="1" VerticalAlignment="Top" Height="30"/>
+        <Label Grid.Column="1" Content="Выберите роль" Grid.Row="1" VerticalAlignment="Top" Margin="0,120,0,0" Height="30"/>
+        <Label Grid.Column="1" Content="Введите ФИО"  Margin="0,161,0,69" Grid.Row="1" Height="NaN"/>
 
-        <TextBox x:Name="TextBoxLogin" Grid.Column="2" Height="25" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Margin="0,0,105,0" TextChanged="TextBoxLogin_TextChanged" ToolTip="Введите логин или электронную почту"/>
-        <TextBlock x:Name="txtHintLogin" Foreground="Gray" Text="Логин или почта" IsHitTestVisible="False" Grid.Column="2" Margin="0,0,105,219" Grid.Row="1" ToolTip="" />
+        <TextBox x:Name="TextBoxLogin" Grid.Column="2"  Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Margin="0,0,128,0" TextChanged="TextBoxLogin_TextChanged" ToolTip="Введите логин или электронную почту" Height="30"/>
+        <TextBlock x:Name="txtHintLogin" Foreground="Gray" Text="Логин или почта" IsHitTestVisible="False" Grid.Column="2" Margin="0,0,128,230" Grid.Row="1" ToolTip="" />
 
-        <TextBox x:Name="TextBoxPassword" Grid.Column="2" Height="24" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Margin="0,37,105,0" TextChanged="TextBoxPassword_TextChanged" ToolTip="Введите пароль"/>
-        <TextBlock x:Name="txtHintPassword" Foreground="Gray" Text="Пароль" IsHitTestVisible="False" Grid.Column="2" Margin="0,37,105,184" Grid.Row="1" ToolTip=""/>
+        <TextBox x:Name="TextBoxPassword" Grid.Column="2" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Margin="0,40,128,0" TextChanged="TextBoxPassword_TextChanged" ToolTip="Введите пароль" Height="30"/>
+        <TextBlock x:Name="txtHintPassword" Foreground="Gray" Text="Пароль" IsHitTestVisible="False" Grid.Column="2" Margin="0,40,128,190" Grid.Row="1" ToolTip=""/>
 
-        <TextBox x:Name="TextBoxPasswordConfirmed" Grid.Column="2" Height="24" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Margin="0,72,105,0" TextChanged="TextBoxPasswordConfirmed_TextChanged" ToolTip="Введите пароль повторно"/>
-        <TextBlock x:Name="txtHintPasswordConfirmed" Foreground="Gray" Text="Пароль (еще раз)" IsHitTestVisible="False" Grid.Column="2" Margin="0,72,105,148" Grid.Row="1" ToolTip="" />
+        <TextBox x:Name="TextBoxPasswordConfirmed" Grid.Column="2" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Margin="0,80,128,0" TextChanged="TextBoxPasswordConfirmed_TextChanged" ToolTip="Введите пароль повторно" Height="30"/>
+        <TextBlock x:Name="txtHintPasswordConfirmed" Foreground="Gray" Text="Пароль (еще раз)" IsHitTestVisible="False" Grid.Column="2" Margin="0,80,128,150" Grid.Row="1" ToolTip="" />
 
-        <ComboBox x:Name="ComboBoxRole" Grid.Column="2" Margin="0,107,105,0" SelectedIndex="0" Grid.Row="1" VerticalAlignment="Top" ToolTip="Выберите роль пользователя">
+        <ComboBox x:Name="ComboBoxRole" Grid.Column="2" Margin="0,121,128,0" SelectedIndex="0" Grid.Row="1" VerticalAlignment="Top" ToolTip="Выберите роль пользователя" Height="30">
             <ComboBoxItem Content="Администратор"/>
             <ComboBoxItem Content="Пользователь"/>
         </ComboBox>
 
-        <TextBox x:Name="TextBoxFIO" Grid.Column="2" Height="25" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Margin="0,142,105,0" TextChanged="TextBoxFIO_TextChanged" ToolTip="Введите ваше ФИО"/>
-        <TextBlock x:Name="txtHintFIO" Foreground="Gray" Text="ФИО " IsHitTestVisible="False" Grid.Column="2" Margin="0,142,105,77" Grid.Row="1" ToolTip=""/>
+        <TextBox x:Name="TextBoxFIO" Grid.Column="2" Grid.Row="1" TextWrapping="Wrap"  VerticalAlignment="Top" Margin="0,161,128,0" TextChanged="TextBoxFIO_TextChanged" ToolTip="Введите ваше ФИО" Height="30"/>
+        <TextBlock x:Name="txtHintFIO" Foreground="Gray" Text="ФИО " IsHitTestVisible="False" Grid.Column="2" Margin="0,161,128,69" Grid.Row="1" ToolTip=""/>
 
-        <Button x:Name="ButtonCancel" Content="Отмена" Width="130" Margin="0,195,70,19"  Grid.Row="1" Grid.Column="1" ToolTip="Нажмите, чтобы вернуться на страницу авторизации" Click="ButtonCancel_Click"/>
-        <Button x:Name="ButtonReg" Content="Регистрация" Margin="0,194,105,20" Grid.Row="1" Grid.Column="2" ToolTip="Нажмите, чтобы зарегистрироваться" Click="ButtonReg_Click"/>
+        <Button x:Name="ButtonCancel" Content="Отмена" Margin="6,225,42,0"  Grid.Row="1" ToolTip="Нажмите, чтобы вернуться на страницу авторизации" Click="ButtonCancel_Click" Grid.Column="1"/>
+        <Button x:Name="ButtonReg" Content="Регистрация" Margin="0,225,128,0" Grid.Row="1" ToolTip="Нажмите, чтобы зарегистрироваться" Click="ButtonReg_Click" Grid.Column="2"/>
     </Grid>
 </Page>

@@ -5,49 +5,58 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:_221_Puzacheva.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="344" d:DesignWidth="600"
-      Title="AddUserPage">
+      d:DesignHeight="400" d:DesignWidth="720"
+      Title="Добавление пользователя">
 
     <Grid x:Name="AddGrid">
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="32"></RowDefinition>
             <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="120"></ColumnDefinition>
-            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="149"></ColumnDefinition>
+            <ColumnDefinition Width="194"></ColumnDefinition>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Label Grid.Column="1" Content="Логин"  Margin="0,0,10,19" Grid.Row="1" />
-        <Label Grid.Column="1" Content="Пароль"  Margin="0,0,10,19" Grid.Row="2" />
-        <Label Grid.Column="1" Content="Роль"  Margin="0,0,10,18" Grid.Row="3"/>
-        <Label Grid.Column="1" Content="ФИО"  Margin="0,48,10,19" Grid.Row="3" Grid.RowSpan="2"/>
-        <Label Grid.Column="1" Content="Фото (необязательно)"  Margin="0,49,10,19" Grid.Row="4" Grid.RowSpan="2"/>
+        <Label Grid.Column="1" Content="Логин"  Margin="0,0,0,20" Grid.Row="1" />
+        <Label Grid.Column="1" Content="Пароль"  Margin="0,0,0,20" Grid.Row="2" />
+        <Label Grid.Column="1" Content="Роль"  Margin="0,0,0,20" Grid.Row="3"/>
+        <Label Grid.Column="1" Content="ФИО"  Margin="0,0,0,20" Grid.Row="4"/>
+        <Label Grid.Column="1" Content="Фото (необязательно)"  Margin="0,0,10,20" Grid.Row="5"/>
 
-        <TextBox x:Name="TextBoxLogin" Text="{Binding Login}" Grid.Column="2" Grid.Row="1" Height="25"  TextWrapping="Wrap" TextChanged="TextBoxLogin_TextChanged" ToolTip="Введите логин или электронную почту" Margin="0,0,105,22"/>
-        <TextBlock x:Name="txtHintLogin" Foreground="Gray" Height="25" Text="Логин или почта" IsHitTestVisible="False" Grid.Column="2" Margin="0,0,105,22" Grid.Row="1" ToolTip="" />
+        <TextBox x:Name="TextBoxLogin" Text="{Binding Login}" Grid.Column="2" Grid.Row="1"  TextWrapping="Wrap" TextChanged="TextBoxLogin_TextChanged" ToolTip="Введите логин или электронную почту" Margin="0,0,149,20"/>
+        <TextBlock x:Name="txtHintLogin" Foreground="Gray" Text="Логин или почта" IsHitTestVisible="False" Grid.Column="2" Margin="0,0,149,20" Grid.Row="1" ToolTip="" RenderTransformOrigin="0.5,0.5" >
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.006"/>
+                    <RotateTransform Angle="-0.028"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
 
-        <TextBox x:Name="TextBoxPassword" Text="{Binding Password}" Grid.Column="2" Height="25" Grid.Row="2" TextWrapping="Wrap"  Margin="0,0,105,22" TextChanged="TextBoxPassword_TextChanged" ToolTip="Введите пароль"/>
-        <TextBlock x:Name="txtHintPassword" Foreground="Gray" Height="25" Text="Пароль" IsHitTestVisible="False" Grid.Column="2" Margin="0,0,105,22" Grid.Row="2" ToolTip=""/>
+        <TextBox x:Name="TextBoxPassword" Text="{Binding Password}" Grid.Column="2" Grid.Row="2" TextWrapping="Wrap"  Margin="0,0,149,20" TextChanged="TextBoxPassword_TextChanged" ToolTip="Введите пароль"/>
+        <TextBlock x:Name="txtHintPassword" Foreground="Gray" Text="Пароль" IsHitTestVisible="False" Grid.Column="2" Margin="0,0,153,20" Grid.Row="2" ToolTip=""/>
 
-        <ComboBox x:Name="ComboBoxRole" SelectedIndex="0" SelectedItem="{Binding Role}" Grid.Column="2" Height="25" Margin="0,0,105,23" Grid.Row="3" ToolTip="Выберите роль пользователя">
+        <ComboBox x:Name="ComboBoxRole" SelectedIndex="0" SelectedItem="{Binding Role}" Grid.Column="2" Margin="0,0,149,20" Grid.Row="3" ToolTip="Выберите роль пользователя">
             <ComboBoxItem Content="Администратор"/>
             <ComboBoxItem Content="Пользователь"/>
         </ComboBox>
 
-        <TextBox x:Name="TextBoxFIO" Text="{Binding FIO}" Grid.Column="2" Height="25" Grid.Row="3" TextWrapping="Wrap"  VerticalAlignment="Top" Margin="0,48,105,0" TextChanged="TextBoxFIO_TextChanged" ToolTip="Введите ваше ФИО" Grid.RowSpan="2"/>
-        <TextBlock x:Name="txtHintFIO" Foreground="Gray" Height="25" Text="ФИО " IsHitTestVisible="False" Grid.Column="2" Margin="0,48,105,24" Grid.Row="3" ToolTip="" Grid.RowSpan="2" />
+        <TextBox x:Name="TextBoxFIO" Text="{Binding FIO}" Grid.Column="2" Grid.Row="4" TextWrapping="Wrap"  VerticalAlignment="Top" Margin="0,0,149,0" TextChanged="TextBoxFIO_TextChanged" ToolTip="Введите ваше ФИО" Height="30"/>
+        <TextBlock x:Name="txtHintFIO" Foreground="Gray" Text="ФИО " IsHitTestVisible="False" Grid.Column="2" Margin="0,0,149,20" Grid.Row="4" ToolTip="" />
 
-        <TextBox x:Name="TextBoxPhoto" Text="{Binding Photo}" Grid.Column="2" Height="25" Grid.Row="4" TextWrapping="Wrap" Margin="0,49,105,22" TextChanged="TextBoxPhoto_TextChanged" ToolTip="Вставьте ссылку на ваше фото" Grid.RowSpan="2"/>
-        <TextBlock x:Name="txtHintPhoto" Foreground="Gray" Height="25" Text="Ссылка на фото" IsHitTestVisible="False" Grid.Column="2" Margin="0,49,105,24" Grid.Row="4" ToolTip="" Grid.RowSpan="2" />
+        <TextBox x:Name="TextBoxPhoto" Text="{Binding Photo}" Grid.Column="2" Grid.Row="5" TextWrapping="Wrap" Margin="0,0,149,20" TextChanged="TextBoxPhoto_TextChanged" ToolTip="Вставьте ссылку на ваше фото"/>
+        <TextBlock x:Name="txtHintPhoto" Foreground="Gray" Text="Ссылка на фото" IsHitTestVisible="False" Margin="0,0,149,20" Grid.Row="5" ToolTip="" Grid.Column="2" />
 
-        <Button x:Name="ButtonCancel" Content="Отмена" Margin="0,9,70,11"  Grid.Row="6" Grid.Column="1" ToolTip="Нажмите, чтобы вернуться к списку пользователей" Click="ButtonCancel_Click"/>
-        <Button x:Name="ButtonSave" Content="Сохранить" Margin="0,8,105,12" Grid.Row="6" Grid.Column="2" ToolTip="Нажмите, чтобы сохранить данные" HorizontalAlignment="Right" Width="175" Click="ButtonSave_Click"/>
+        <Button x:Name="ButtonCancel" Content="Отмена" Margin="0,27,70,56"  Grid.Row="6" Grid.Column="1" ToolTip="Нажмите, чтобы вернуться к списку пользователей" Click="ButtonCancel_Click"/>
+        <Button x:Name="ButtonSave" Content="Сохранить" Margin="0,28,149,55" Grid.Row="6" Grid.Column="2" ToolTip="Нажмите, чтобы сохранить данные" Click="ButtonSave_Click"/>
     </Grid>
 </Page>
